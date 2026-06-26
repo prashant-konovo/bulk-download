@@ -7,20 +7,7 @@ const app = express();
 
 app.get("/", (req, res) => {
   console.log("Serving the main page...");
-  res.send(`
-        <!doctype html>
-        <html lang="en">
-            <head>
-                <meta charset="UTF-8" />
-                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                <title>Bulk Download Service</title>
-            </head>
-            <body>
-                <h1>Bulk Download Service</h1>
-                <button onclick="window.location.href='/bulk-download'">Start Bulk Download</button>
-            </body>
-        </html>
-    `);
+  res.sendFile(path.join(__dirname, "index.html"));
 });
 
 app.get("/bulk-download", (req, res) => {
